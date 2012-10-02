@@ -10,11 +10,11 @@ log = CPLog(__name__)
 
 class RottenTomatoes(Automation):
 
-    interval = 1800
+    interval = 86400
 
     urls = {
         'base': 'http://api.rottentomatoes.com/api/public/v1.0',
-        'new_releases': '/lists/dvds/new_releases.json?apikey=%s',
+        'upcoming': '/lists/dvds/upcoming.json?page_limit=50&apikey=%s',
     }
 
     def getIMDBids(self):
@@ -23,7 +23,7 @@ class RottenTomatoes(Automation):
             return
 
         movies = []
-        for movie in self.getMovies('new_releases'):
+        for movie in self.getMovies('upcoming'):
             name = movie.get('title')
             year = movie.get('year')
 

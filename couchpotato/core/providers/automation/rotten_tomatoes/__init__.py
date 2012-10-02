@@ -10,7 +10,7 @@ config = [{
             'tab': 'automation',
             'name': 'rottentomatoes',
             'label': 'Rotten Tomatoes',
-            'description': 'Automatically add new DVD releases from <a href="http://rottentomatoes.com">Rotten Tomatoes</a>',
+            'description': 'Automatically add upcoming DVD releases from <a href="http://rottentomatoes.com">Rotten Tomatoes</a>',
             'options': [
                 {
                     'name': 'automation_enabled',
