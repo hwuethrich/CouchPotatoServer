@@ -24,7 +24,8 @@ Page.Wanted = new Class({
 				'status': 'active',
 				'actions': MovieActions,
 				'add_new': true,
-				'menu': [self.manual_search]
+				'menu': [self.manual_search],
+				'on_empty_element': App.createUserscriptButtons().addClass('empty_wanted')
 			});
 			$(self.wanted).inject(self.el);
 
@@ -135,7 +136,7 @@ window.addEvent('domready', function(){
 							'text': profile.label ? profile.label : profile.data.label
 						}).inject(self.profile_select);
 
-						if(self.movie.profile && self.movie.profile.data.id == profile_id)
+						if(self.movie.profile && self.movie.profile.data && self.movie.profile.data.id == profile_id)
 							self.profile_select.set('value', profile_id);
 					});
 
